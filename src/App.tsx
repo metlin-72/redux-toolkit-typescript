@@ -1,15 +1,17 @@
-import React from "react";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import Login from "./component/Login";
-import Profile from "./component/Profile";
-import ColorChange from "./component/ColorChange";
+import Home from "./Home";
+import MainProfile from "./component/MainProfile";
+import PostList from "./component/asyncThunk/PostList";
 
 function App() {
   return (
     <div className="App">
-      <Profile />      
-      <Login />
-      <ColorChange />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/profile" element={<MainProfile />} />
+        <Route path="/postList" element={<PostList />} />
+      </Routes>
     </div>
   );
 }
